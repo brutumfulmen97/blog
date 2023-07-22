@@ -9,6 +9,8 @@ type Props = {
 export default function CustomImage({ src, alt, priority }: Props) {
     const prty = priority ? true : false;
 
+    console.log(src);
+
     return (
         <div className="w-full h-full">
             <Image

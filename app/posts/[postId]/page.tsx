@@ -4,7 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import "highlight.js/styles/github-dark.css";
 
-export const revalidate = 0;
+export const revalidate = 86400;
 
 type Props = {
     params: {
@@ -58,12 +58,12 @@ export default async function Post({ params: { postId } }: Props) {
     );
 }
 
-// export async function generateStaticParams() {
-//     const posts = await getPostsMeta();
+export async function generateStaticParams() {
+    const posts = await getPostsMeta();
 
-//     if (!posts) return [];
+    if (!posts) return [];
 
-//     return posts.map((post) => ({
-//         postId: post.id,
-//     }));
-// }
+    return posts.map((post) => ({
+        postId: post.id,
+    }));
+}
