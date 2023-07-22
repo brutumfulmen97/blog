@@ -1,17 +1,19 @@
+import MyProfilePic from "./components/MyProfilePic";
 import Posts from "./components/Posts";
 
 export const revalidate = 10;
 
 export default function Home() {
     return (
-        <main className="px-6 mx-auto">
+        <div className="mx-auto">
+            <MyProfilePic />
             <p className="mt-12 mb-12 text-3xl text-center dark:text-white">
                 Hello and welcome 👋&nbsp;
                 <span className="whitespace-nowrap">
-                    I&apos;m <span className="font-bold">Vlatko</span>
+                    I'm <span className="font-bold">Vlatko</span>
                 </span>
             </p>
             <Posts />
-        </main>
+        </div>
     );
 }
